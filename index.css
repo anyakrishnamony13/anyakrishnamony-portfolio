@@ -1,0 +1,131 @@
+/* === General Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #ffffff;
+    color: #16291b;
+    line-height: 1.6;
+  }
+  
+  /* === Navbar === */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #16291b; /* Deep greenish shade */
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links .active {
+    color: #c6c6c6;
+  }
+  
+  /* === Hero Section (Split Layout, Vertically Centered) === */
+.home-hero {
+  display: flex;
+  align-items: center;    /* vertically center items */
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 80vh;       /* hero fills most of the screen height */
+}
+
+.hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;  /* centers horizontally in left side */
+  align-items: center;      /* centers vertically in left side */
+}
+
+.profile-pic {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 6px solid #16291b;
+  object-fit: cover;
+  transform: scale(2);
+}
+
+.hero-right {
+  flex: 1;
+  text-align: left;
+}
+
+  
+  .hero-name {
+    font-size: 3rem;
+    color: #16291b;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-bio {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  
+  /* === CTA Button === */
+  .cta-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background: #16291b; /* Button matches theme color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background: #1e3b28; /* Slightly lighter shade on hover */
+  }
+  
+  /* === Footer === */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #16291b; /* Footer matches theme color */
+    color: #fff;
+    margin-top: 2rem;
+  }
+  
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .home-hero {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-right {
+      text-align: center;
+    }
+  }
+  
