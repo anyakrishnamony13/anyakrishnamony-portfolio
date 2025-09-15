@@ -91,6 +91,40 @@
     margin-bottom: 0.5rem;
   }
   
+  .project-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .project-meta span {
+    background: #f0f0f0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+  }
+
+  .project-btn {
+    display: block;          /* makes it take up full line */
+    width: fit-content;      /* shrink to fit text */
+    margin: 1rem auto 0;     /* centers it horizontally */
+    padding: 0.6rem 1.2rem;
+    background: #16291b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+    text-align: center;
+  }
+  
+  .project-btn:hover {
+    background: #2e4732;
+  }
+  
+  
+  
   /* === Footer === */
   footer {
     text-align: center;

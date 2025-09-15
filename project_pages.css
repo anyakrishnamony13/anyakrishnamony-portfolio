@@ -1,0 +1,325 @@
+/* === Global Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: hsl(0, 0%, 100%);
+    color: #16291b;
+    line-height: 1.6;
+  }
+
+  /* Back to Projects Button inside hero section */
+.hero .back-button {
+    position: absolute; /* positioned relative to hero */
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #16291b;
+    background-color: #f5f7fa;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero .back-button:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-1px);
+}
+
+/* Ensure hero is positioned relatively to contain absolute button */
+.hero {
+    position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .hero .back-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+        top: 0.8rem;
+        left: 0.8rem;
+    }
+}
+
+
+  /* === Navbar === */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #16291b;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links .active {
+    color: #c6c6c6;
+  }
+  
+  /* === Hero Section === */
+  .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f5f7fa;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  
+  /* === Project Detail Section === */
+  .projects h3,
+.design-pieces h3 {
+    text-align: center;
+}
+
+  .projects {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    line-height: 1.8;
+  }
+  
+  .projects p {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.05rem;
+  }
+  
+  .projects h3 {
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem;
+    color: #16291b;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3rem;
+  }
+  
+  .projects h4 {
+    font-size: 1.3rem;
+    margin: 1.5rem 0 1rem;
+    color: #2e4732;
+  }
+  
+  .projects ul,
+  .projects ol {
+    margin: 1rem 0 1.5rem 1.5rem;
+    padding-left: 1rem;
+    color: #444;
+  }
+  
+  .projects li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Project metadata styling */
+.project-meta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center; /* center horizontally */
+    gap: 1.5rem; /* space between date and class */
+    font-size: 0.95rem;
+    color: #777; /* subtle gray */
+    font-style: italic;
+}
+
+.project-meta span {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    background-color: #f0f0f0; /* light gray background */
+}
+
+.project-meta .meta-date {
+    /* Optional: slightly different style for date */
+    color: #555;
+}
+
+.project-meta .meta-class {
+    /* Optional: emphasize class */
+    font-weight: 500;
+    color: #444;
+}
+
+/* CTA Button Styling */
+.cta-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #16291b; /* matches navbar color */
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #2e4732; /* slightly lighter/different shade */
+    transform: translateY(-2px);
+}
+
+  
+  /* === Highlighted Box === */
+  .highlight {
+    background: #f5f7fa;
+    border-left: 4px solid #16291b;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+  }
+
+  /* === Design Pieces Section === */
+.design-pieces {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    text-align: center; /* center header and content */
+}
+
+.design-pieces h3 {
+    font-size: 1.6rem;
+    margin: 2rem 0 1rem;
+    color: #16291b;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.3rem;
+}
+
+/* Grid for the figures only */
+.design-pieces .figures-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem; /* space below the header */
+}
+
+.design-pieces figure {
+    margin: 0;
+}
+
+.design-pieces img {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.design-pieces figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+ /* Make figures-grid stack rows vertically */
+.design-pieces .figures-grid {
+    display: flex;
+    flex-direction: column; /* stack top and bottom rows */
+    gap: 2rem; /* space between top and bottom rows */
+  }
+  
+  /* Top row: three images in a row */
+  .figures-grid .top-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  /* Bottom row: two images in a row */
+  .figures-grid .bottom-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+/* Wrap image in a container for overlay effect */
+.design-pieces figure img {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Darken image on hover only */
+  .design-pieces figure img:hover {
+    filter: brightness(70%);
+  }
+  
+  
+/* Lightbox overlay */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: zoom-out;
+}
+
+/* Lightbox image */
+.lightbox-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Optional zoom effect on hover inside lightbox */
+.lightbox-overlay img:hover {
+    transform: scale(1.05);
+}
+
+  
+  /* === Footer === */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #16291b;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  
+ 
