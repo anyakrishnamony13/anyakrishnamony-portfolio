@@ -129,5 +129,24 @@
     }
   }
 
+  /* Homepage Hero Image */
+.hero img {
+  width: 100%;       /* make it fill container width */
+  max-width: 800px;  /* caps size for desktop */
+  height: auto;      /* maintain aspect ratio */
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Optional: on very small screens, reduce max-width even more */
+@media (max-width: 480px) {
+  .hero img {
+      max-width: 95%; /* almost full width */
+  }
+}
+
+
   
   
