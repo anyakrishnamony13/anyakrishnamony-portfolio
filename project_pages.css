@@ -6,11 +6,11 @@
   }
   
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: hsl(0, 0%, 100%);
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
     color: #16291b;
     line-height: 1.6;
-  }
+}
 
   /* Back to Projects Button inside hero section */
 .hero .back-button {
@@ -196,11 +196,45 @@
   /* === Highlighted Box === */
   .highlight {
     background: #f5f7fa;
-    border-left: 4px solid #16291b;
-    padding: 1rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-  }
+    border-left: 3px solid #16291b; /* slightly smaller border */
+    padding: 0.5rem 0.75rem;        /* smaller box padding */
+    margin: 1rem 0;
+    font-style: italic;            /* smaller text for paragraph */
+    line-height: 1.2;               /* compact spacing */
+    color: #555;                  /* optional: keeps box from stretching too wide */
+}
+
+.highlight h4, p {
+    font-size: 0.75rem;             /* slightly bigger than paragraph */
+    margin-bottom: 0.25rem;         /* small spacing below header */
+    font-weight: 500;                /* slightly bolder than paragraph */
+    color: #444;                     /* a touch darker for hierarchy */
+}
+
+.paper-prototype {
+  display: flex;
+  justify-content: center;  /* centers them horizontally */
+  gap: 1rem;                /* space between images */
+  flex-wrap: nowrap;        /* allow scroll if too many */
+}
+
+.paper-prototype img {
+  max-height: 400px;   /* cap their height so they’re consistent */
+  height: auto;        /* keep natural proportions */
+  width: auto;         /* do not stretch */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.paper-prototype img:hover {
+  filter: brightness(75%);
+  transform: scale(1.03);
+}
+
+
+
 
   /* === Design Pieces Section === */
 .design-pieces {
@@ -383,3 +417,31 @@
     filter: brightness(70%);
   }
   
+.ref-images {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;       /* keep in one row */
+    overflow-x: auto;        /* scroll if too wide */
+}
+
+.ref-images img {
+    height: auto;            /* preserve original aspect ratio */
+    width: auto;             /* use original width */
+    max-height: 300px;       /* optional: cap height so they don’t get too tall */
+    max-width: 100%;          /* scale down if container is too small */
+    flex-shrink: 1;          /* allow image to shrink proportionally */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.ref-images img:hover {
+    filter: brightness(75%);
+    transform: scale(1.03);
+}
+
+
+    
+    

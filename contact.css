@@ -6,11 +6,11 @@
   }
   
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
     color: #16291b;
     line-height: 1.6;
-  }
+}
   
   /* === Navbar === */
   .navbar {

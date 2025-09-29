@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project 1: Fictional Objects</title>
   <link rel="stylesheet" href="project_pages.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
   <header>
     <nav class="navbar">
-      <h1 class="logo">Anya Krishnamony</h1>
+        <img src="assets/header logo.png" alt="My Logo" class="logo" style="height: 40px; width: auto; filter: invert(1); object-fit: contain;">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
@@ -29,7 +30,7 @@
         <span class="meta-date">Sept 2025</span>
         <span class="meta-class">ARTF 1250</span>
       </div>
-      <a href="link here" class="cta-button" target="_blank" rel="noopener">
+      <a href="assets/Fictional Objects.pdf" class="cta-button" target="_blank" rel="noopener">
         View Full Written Documentation
     </a>
   </section>
@@ -47,9 +48,10 @@
           </tr>
         </thead>
         <tbody>
-        <tr>Z
+        <tr>
             <td>
-              <img src="assets/teakettle.png" alt="Purple Unicorn Pillow Pet"><br>
+              <img src="assets/pillowpet.png" alt="Purple Unicorn Pillow Pet"><br>
+              <img src="assets/pillowpet1.png" alt="Purple Unicorn Pillow Pet"><br>
               <strong>Pillow Pet</strong>
             </td>
             <td>
@@ -80,6 +82,7 @@
           <tr>
             <td>
               <img src="assets/applewatch.png" alt="Apple Watch"><br>
+              <img src="assets/applewatch1.png" alt="Purple Unicorn Pillow Pet"><br>
               <strong>Apple Watch</strong>
             </td>
             <td>
@@ -110,6 +113,7 @@
           <tr>
             <td>
               <img src="assets/teakettle.png" alt="Tea Kettle"><br>
+              <img src="assets/kettle1.png" alt="Purple Unicorn Pillow Pet"><br>
               <strong>Tea Kettle</strong>
             </td>
             <td>
@@ -253,17 +257,34 @@
               </li>
             </ul>
           </section>
+    
+          <h4>Reference Images</h4>
+          <div class="ref-images">
+            <img src="assets/ref1.jpg.webp" alt="Reference Photo 1">
+            <img src="assets/ref2.jpeg" alt="Reference Photo 2">
+            <img src="assets/ref3.webp" alt="Reference Photo 3">
+          </div>
           
+
     <h4>Prototype Sketches (No Redesign)</h4>
-      <img src="assets/Paper Prototype Sketches.png" alt="V1 Paper Prototype">
+        <img src="assets/Paper Prototype Sketches.png" alt="V1 Paper Prototype">
 
     <h4>Prototype Sketches (Redesign)</h4>
-      <img src="" alt="V2 Paper Prototype">
+        <img src="assets/Redesign V1.png" alt="V2 Paper Prototype">
 
+    <h4>Paper Prototype (No Redesign)</h4>
+    <div class="paper-prototype">
+        <img src="assets/PP1.png" alt="Paper Prototype 1">
+        <img src="assets/PP2.png" alt="Paper Prototype 2">
+        <img src="assets/PP3.png" alt="Paper Prototype 3">
+        <img src="assets/PP4.png" alt="Paper Prototype 4">
+    </div>
+        
+        
   
     </section>
 
-    <section class="part 3">
+    <section class="part3">
         <h3>Part 3: Object Attribute Grid</h3>
         <table border="1" cellspacing="0" cellpadding="8" class="object-table">
         <tbody>
@@ -309,7 +330,6 @@
         </section>
     
 
-
     <section class="highlight">
       <h4>Recognition of AI Use</h4>
       <p>Portions of this project made use of AI tools for transcription and organization of notes into clear sentences. No AI assistance was used in the creation of the visual design, artwork, or conceptual development; all creative decisions and outputs are entirely original.</p>
@@ -324,8 +344,9 @@
     const lightboxImg = lightbox.querySelector('img');
   
     // Select both design-piece images and table images
-    const figures = document.querySelectorAll('.design-pieces figure img, .object-table td img');
-  
+    const figures = document.querySelectorAll('.design-pieces figure img, .object-table td img, .ref-images img, .paper-prototype img');
+
+
     figures.forEach(img => {
       img.addEventListener('click', () => {
         lightbox.style.display = 'flex';
