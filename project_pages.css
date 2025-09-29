@@ -107,7 +107,7 @@
 }
 
   .projects {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 3rem auto;
     padding: 0 2rem;
     line-height: 1.8;
@@ -322,4 +322,64 @@
     margin-top: 2rem;
   }
   
- 
+
+  .object-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    table-layout: fixed; /* ensures columns obey width settings */
+  }
+  
+  .object-table th,
+  .object-table td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  
+  .object-table th {
+    background: #16291b;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .object-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* light gray for odd rows */
+  }
+  
+  .object-table tbody tr:nth-child(even) {
+    background-color: #ffffff; /* white for even rows */
+  }
+  
+  .object-table td:first-child {
+    width: 220px; /* make object column wider */
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .object-table td:first-child img {
+    display: block;
+    margin: 0 auto 0.5rem auto;
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  
+  .part2 img {
+    display: block;            /* lets us center with margin */
+    max-width: 100%;           /* don’t exceed container width */
+    width: 100%;               /* scale to section width */
+    height: auto;              /* keep proportions */
+    margin: 1rem auto;         /* center horizontally with space */
+  }
+  
+  .object-table td img {
+    cursor: pointer;
+    transition: filter 0.3s ease;
+  }
+  
+  .object-table td img:hover {
+    filter: brightness(70%);
+  }
+  
