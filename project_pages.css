@@ -567,9 +567,20 @@ footer {
   animation: fadeIn 0.5s ease;
 }
 
-.step-content img {
+.step-content img{
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.step-content iframe {
+  width: 320px;
+  height: 420px;
+  display: block; /* Change from default inline */
+  margin: 0 auto; /* Center horizontally */
+  border: none;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin-bottom: 1rem;
@@ -651,15 +662,17 @@ footer {
   }
 }
 
-.panel {
-  width: 100%;
-  max-width: 800px; /* or whatever your panel width is */
-  margin: 0 auto;
-}
 
-.full-width-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* optional, matches your panel style */
+.demo-vid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* centers horizontally */
+  align-items: center;      /* centers vertically (if heights differ) */
+  gap: 1rem;
+  width: 320px;
+  height: 420px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
 }
