@@ -676,3 +676,102 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   margin-bottom: 1rem;
 }
+
+/* === Storyboard Section === */
+.storyboard {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.storyboard h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0 2rem;
+  color: #16291b;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+.storyboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.storyboard-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.storyboard-grid img:hover {
+  filter: brightness(75%);
+  transform: scale(1.03);
+}
+
+/* Lightbox Navigation Buttons */
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background 0.3s ease;
+  display: none;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.lightbox-nav.prev {
+  left: 2rem;
+}
+
+.lightbox-nav.next {
+  right: 2rem;
+}
+
+.lightbox-nav.active {
+  display: block;
+}
+
+/* Responsive for storyboard */
+@media (max-width: 768px) {
+  .storyboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .lightbox-nav.prev {
+    left: 1rem;
+  }
+  
+  .lightbox-nav.next {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storyboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

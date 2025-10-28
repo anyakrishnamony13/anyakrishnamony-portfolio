@@ -579,7 +579,17 @@
 
     <section class="storyboard">
       <h3>Part 5: Storyboard</h3>
-      <img src="assets/Storyboard.png" alt="Storyboard for Kettle">
+      <div class="storyboard-grid">
+        <img src="assets/Storyboard images/1.png" alt="Panel 1" data-index="0">
+        <img src="assets/Storyboard images/2.png" alt="Panel 2" data-index="1">
+        <img src="assets/Storyboard images/3.png" alt="Panel 3" data-index="2">
+        <img src="assets/Storyboard images/4.png" alt="Panel 4" data-index="3">
+        <img src="assets/Storyboard images/5.png" alt="Panel 5" data-index="4">
+        <img src="assets/Storyboard images/6.png" alt="Panel 6" data-index="5">
+        <img src="assets/Storyboard images/7.png" alt="Panel 7" data-index="6">
+        <img src="assets/Storyboard images/8.png" alt="Panel 8" data-index="7">
+        <img src="assets/Storyboard images/9.png" alt="Panel 9" data-index="8">
+      </div>
     </section>
 
     <section class="final-section">
@@ -677,48 +687,113 @@
   </section>
   
   <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-nav prev" id="prevBtn">❮</button>
     <img src="" alt="Enlarged Design">
+    <button class="lightbox-nav next" id="nextBtn">❯</button>
   </div>
 
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
-  
-    // Select both design-piece images and table images
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    // All clickable images
     const figures = document.querySelectorAll('.design-pieces figure img, .object-table td img, .ref-images img, .paper-prototype img, .prototype-item img');
-
-
-
+    
+    // Storyboard images
+    const storyboardImages = document.querySelectorAll('.storyboard-grid img');
+    let currentStoryboardIndex = -1;
+    
+    // Handle regular image clicks
     figures.forEach(img => {
       img.addEventListener('click', () => {
         lightbox.style.display = 'flex';
         lightboxImg.src = img.src;
         lightboxImg.alt = img.alt;
+        prevBtn.classList.remove('active');
+        nextBtn.classList.remove('active');
+        currentStoryboardIndex = -1;
       });
     });
-  
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      lightboxImg.src = '';
+    
+    // Handle storyboard image clicks
+    storyboardImages.forEach((img, index) => {
+      img.addEventListener('click', () => {
+        currentStoryboardIndex = index;
+        openLightbox(index);
+      });
     });
-
+    
+    function openLightbox(index) {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = storyboardImages[index].src;
+      lightboxImg.alt = storyboardImages[index].alt;
+      
+      // Show/hide navigation buttons
+      prevBtn.classList.add('active');
+      nextBtn.classList.add('active');
+      
+      // Disable buttons at boundaries
+      if (index === 0) {
+        prevBtn.style.opacity = '0.3';
+        prevBtn.style.cursor = 'not-allowed';
+      } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+      }
+      
+      if (index === storyboardImages.length - 1) {
+        nextBtn.style.opacity = '0.3';
+        nextBtn.style.cursor = 'not-allowed';
+      } else {
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+      }
+    }
+    
+    // Previous button
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentStoryboardIndex > 0) {
+        currentStoryboardIndex--;
+        openLightbox(currentStoryboardIndex);
+      }
+    });
+    
+    // Next button
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (currentStoryboardIndex < storyboardImages.length - 1) {
+        currentStoryboardIndex++;
+        openLightbox(currentStoryboardIndex);
+      }
+    });
+    
+    // Close lightbox when clicking background
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+        currentStoryboardIndex = -1;
+      }
+    });
+    
+    // Process buttons (your existing code)
     const processButtons = document.querySelectorAll('.process-step');
-  const stepContents = document.querySelectorAll('.step-content');
-
-  processButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const stepNumber = button.getAttribute('data-step');
-      
-      // Remove active class from all buttons and contents
-      processButtons.forEach(btn => btn.classList.remove('active'));
-      stepContents.forEach(content => content.classList.remove('active'));
-      
-      // Add active class to clicked button and corresponding content
-      button.classList.add('active');
-      document.getElementById(`step-${stepNumber}`).classList.add('active');
+    const stepContents = document.querySelectorAll('.step-content');
+    
+    processButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const stepNumber = button.getAttribute('data-step');
+        
+        processButtons.forEach(btn => btn.classList.remove('active'));
+        stepContents.forEach(content => content.classList.remove('active'));
+        
+        button.classList.add('active');
+        document.getElementById(`step-${stepNumber}`).classList.add('active');
+      });
     });
-  });
-
   </script>
   
 
