@@ -227,7 +227,7 @@ body {
   flex-wrap: nowrap; /* Force single row */
 }
 
-.paper-prototype img {
+.paper-prototype img, .paper-prototype video {
   width: 250px;
   max-width: 250px;
   height: 280px;
@@ -649,4 +649,17 @@ footer {
     width: 100%;
     max-width: 300px;
   }
+}
+
+.panel {
+  width: 100%;
+  max-width: 800px; /* or whatever your panel width is */
+  margin: 0 auto;
+}
+
+.full-width-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* optional, matches your panel style */
 }
