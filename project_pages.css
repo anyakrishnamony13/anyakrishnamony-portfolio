@@ -716,6 +716,50 @@ footer {
   transform: scale(1.03);
 }
 
+.photos-section {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+
+.photos-section h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  color: #16291b;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.3rem;
+}
+
+/* Matches the layout in your screenshot */
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.photos-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Matches your images’ proportions */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.photos-grid img:hover {
+  filter: brightness(75%);
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .photos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* Lightbox Navigation Buttons */
 .lightbox-nav {
   position: fixed;
@@ -749,6 +793,81 @@ footer {
   display: block;
 }
 
+/* === Mapping Experience Section === */
+
+.mapping-experience h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #16291b;
+  text-align: left;
+}
+
+.mapping-experience p {
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.mapping-experience .location {
+  background-color: #fff;
+  border-left: 4px solid #16291b;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.mapping-experience .location:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.mapping-experience h6, .relfection h6 {
+  font-size: 1.1rem;
+  color: #2e4732;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.mapping-notes h6{
+  color: #000000;
+
+}
+
+.mapping-experience p strong {
+  color: #16291b;
+}
+
+.mapping-experience p:last-child {
+  margin-bottom: 0;
+}
+
+/* Optional subtle divider between sections */
+.mapping-experience .location:not(:last-child)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #eee;
+  margin-top: 1.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .mapping-experience {
+    padding: 1.5rem;
+  }
+
+  .mapping-experience h5 {
+    font-size: 1.2rem;
+  }
+
+  .mapping-experience .location {
+    padding: 1rem;
+  }
+}
+
+
 /* Responsive for storyboard */
 @media (max-width: 768px) {
   .storyboard-grid {
@@ -772,6 +891,43 @@ footer {
 
 @media (max-width: 480px) {
   .storyboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Map Section (Side by Side Images) === */
+
+
+
+.map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.map h4 {
+  grid-column: 1 / -1; /* Makes h4 span both columns */
+}
+
+.map img {
+  width: 100%;
+  height: 400px; /* Set a fixed height */
+  object-fit: contain; /* Keeps entire image visible without cropping */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.map img:hover {
+  filter: brightness(75%);
+  transform: scale(1.03);
+}
+
+/* Responsive: Stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .map {
     grid-template-columns: 1fr;
   }
 }
