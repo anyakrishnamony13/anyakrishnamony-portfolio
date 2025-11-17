@@ -931,3 +931,67 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.media-container {
+  width: 1000px;     /* match your video width */
+  margin: 0 auto;    /* center the entire block */
+}
+
+.media-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 15px;
+}
+
+.bottom-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.bottom-images img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bottom-images img:hover, .sketch-img:hover, .video-frame:hover {
+  filter: brightness(75%);
+  transform: scale(1.03);
+}
+
+.top-row {
+  display: flex;
+  align-items: stretch; /* makes both items equal height */
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;  /* give more room if needed */
+  margin: 0 auto;
+}
+
+.video-frame {
+  width: 70%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  flex-grow: 1;      
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sketch-img {
+  width: 25%;         /* guarantees it is MUCH smaller */
+  max-width: 280px;   /* hard limit */
+  height: auto;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
